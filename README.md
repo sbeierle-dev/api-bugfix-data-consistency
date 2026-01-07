@@ -1,22 +1,28 @@
-# Python Bug Fixing & Debugging
+# API Bugfix – Data Consistency & Validation
 
-This repository contains small, focused examples of Python bug fixing and debugging.
+This repository demonstrates a realistic Python REST API bugfix scenario.
 
-The goal is not to showcase frameworks or architectures, but to demonstrate a
-practical approach to:
-- understanding unfamiliar code
-- identifying root causes of bugs
-- applying minimal, targeted fixes
-- improving stability without rewriting systems
+## Problem
+The API returned inconsistent response types and incorrect HTTP status codes
+for certain input values.
 
-The examples are intentionally simple and problem-focused.
-They reflect real-world situations where existing code needs to be fixed,
-not redesigned.
+Issues included:
+- Missing input validation
+- Inconsistent response formats
+- Business logic mixed with request handling
 
-## Scope
-- Logic bugs and edge cases
-- Error handling issues
-- Broken assumptions in existing code
-- Small refactorings for stability and clarity
+## Approach
+- Reproduced the bug with failing tests
+- Introduced explicit validation
+- Refactored business logic into a service layer
+- Ensured deterministic API responses
 
-This repository is work-in-progress and will grow over time with additional cases.
+## Result
+- Consistent response structure
+- Clear error handling
+- Regression tests preventing recurrence
+
+## Run tests
+```bash
+pip install -r requirements.txt
+pytest
